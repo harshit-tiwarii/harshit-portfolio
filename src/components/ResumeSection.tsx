@@ -50,11 +50,11 @@ export const ResumeSection = () => {
 
   const education = [
     {
-      degree: "Bachelor of Computer Science",
-      school: "University of Technology",
-      period: "2016 - 2020",
-      location: "Boston, MA",
-      description: "Graduated with honors. Specialized in software engineering and web development."
+      degree: "Bachelor of Computer Application (BCA)",
+      school: "Indira Gandhi National Open University",
+      period: "2022 - 2025",
+      location: "Delhi",
+      description: "Graduated with honors. Specialized in software engeering and web development."
     }
   ];
 
@@ -62,7 +62,6 @@ export const ResumeSection = () => {
     "AWS Certified Developer",
     "React Developer Certification",
     "Google Cloud Professional",
-    "Scrum Master Certified"
   ];
 
   return (

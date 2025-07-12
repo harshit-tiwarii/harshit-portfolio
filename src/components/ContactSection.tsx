@@ -57,26 +57,26 @@ export const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "alex.johnson@email.com",
-      href: "mailto:alex.johnson@email.com"
+      value: "ht7364164@gmail.com",
+      href: "ht7364164@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "9870564252",
+      href: "tel:+9870564252"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
-      href: "#"
+      value: "Delhi",
+      href: "Delhi"
     }
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/harshit-tiwarii", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/harshit-tiwariii", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
@@ -134,7 +134,7 @@ export const ContactSection = () => {
                       className="rounded-2xl hover:scale-110 transition-transform"
                       asChild
                     >
-                      <a href={social.href} aria-label={social.label}>
+                      <a target='blank' href={social.href} rel='noopener noreferrer' aria-label={social.label}>
                         <social.icon className="w-5 h-5" />
                       </a>
                     </Button>

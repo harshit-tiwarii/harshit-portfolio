@@ -21,8 +21,8 @@ export const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/harshit-tiwarii", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/harshit-tiwariii", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
@@ -33,7 +33,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="text-2xl font-bold text-gradient">
-              Alex Johnson
+              Harshit Tiwari
             </div>
             <p className="text-muted-foreground">
               Creative Full-Stack Developer passionate about building 
@@ -48,7 +48,7 @@ export const Footer = () => {
                   className="rounded-full hover:scale-110 transition-transform"
                   asChild
                 >
-                  <a href={social.href} aria-label={social.label}>
+                  <a href={social.href} aria-label={social.label} target='blank' rel='noopener noreferrer'>
                     <social.icon className="w-5 h-5" />
                   </a>
                 </Button>
@@ -76,9 +76,9 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Get In Touch</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>alex.johnson@email.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>San Francisco, CA</p>
+              <p>ht7364164@gmail.com</p>
+              <p>9870564252</p>
+              <p>Delhi</p>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center text-muted-foreground text-sm">
-            <span>© {currentYear} Alex Johnson. Made with</span>
+            <span>© {currentYear} Harshit Tiwari. Made with</span>
             <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" />
             <span>and lots of coffee.</span>
           </div>
