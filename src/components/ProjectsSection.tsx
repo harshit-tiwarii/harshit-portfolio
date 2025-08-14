@@ -14,58 +14,75 @@ export const ProjectsSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 } // A lower threshold can help trigger the animation sooner
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
+  // Updated project data from your GitHub repositories
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product catalog, shopping cart, and payment processing.",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      gradient: "from-blue-500 to-purple-600",
-      emoji: "🛒"
+      title: "Movie Booking Platform",
+      description: "A full-featured platform where users can browse movies, view details, and book tickets. Built with a focus on user experience.",
+      tech: ["EJS", "CSS", "JavaScript", "Node.js", "MongoDB"],
+      gradient: "from-red-500 to-orange-500",
+      emoji: "🎬",
+      liveLink: "https://movie-booking-platform-phi.vercel.app/", // No live link provided, defaults to repo
+      githubLink: "https://github.com/harshit-tiwarii/Movie-booking-platform"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features built with modern web technologies.",
-      tech: ["Next.js", "TypeScript", "Socket.io", "MongoDB"],
-      gradient: "from-green-500 to-teal-600",
-      emoji: "📋"
+      title: "Internship Portal",
+      description: "A web application that connects students with internship opportunities posted by colleges and companies.",
+      tech: ["JavaScript", "EJS", "Node.js", "MongoDB"],
+      gradient: "from-blue-500 to-cyan-500",
+      emoji: "💼",
+      liveLink: "https://internship-portal-five.vercel.app/", // No live link provided, defaults to repo
+      githubLink: "https://github.com/harshit-tiwarii/Internship-portal"
     },
     {
-      title: "Weather Dashboard",
-      description: "Beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics using multiple weather APIs.",
-      tech: ["React", "Python", "FastAPI", "Chart.js"],
-      gradient: "from-yellow-500 to-orange-600",
-      emoji: "🌤️"
+      title: "Number Guessing Game",
+      description: "A fun and simple browser game where the player tries to guess a secret number between 1 and 100.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      gradient: "from-green-400 to-blue-500",
+      emoji: "�",
+      liveLink: "https://harshit-tiwarii.github.io/Number-guess/",
+      githubLink: "https://github.com/harshit-tiwarii/Number-Guess"
     },
     {
-      title: "Social Media Analytics",
-      description: "Advanced analytics platform for social media insights with data visualization, performance tracking, and automated reporting features.",
-      tech: ["Vue.js", "Django", "Redis", "D3.js"],
-      gradient: "from-pink-500 to-red-600",
-      emoji: "📊"
+      title: "Personal Portfolio",
+      description: "My personal portfolio website designed to showcase my skills, projects, and professional experience to potential employers.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      gradient: "from-purple-500 to-pink-500",
+      emoji: "👨‍💻",
+      liveLink: "https://devharshit.vercel.app/",
+      githubLink: "https://github.com/harshit-tiwarii/harshit-portfolio"
     },
     {
-      title: "Fitness Tracker",
-      description: "Mobile-first fitness application with workout planning, progress tracking, nutrition logging, and social features for motivation.",
-      tech: ["React Native", "Firebase", "Node.js", "ML Kit"],
-      gradient: "from-purple-500 to-indigo-600",
-      emoji: "💪"
+      title: "Edusity - University Website",
+      description: "A modern and responsive website template designed for universities and other educational institutions.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      gradient: "from-indigo-500 to-blue-500",
+      emoji: "🎓",
+      liveLink: "https://edusity-b5ga.vercel.app/",
+      githubLink: "https://github.com/harshit-tiwarii/Edusity"
     },
     {
-      title: "AI Chat Assistant",
-      description: "Intelligent chatbot with natural language processing, context awareness, and integration with various business tools and APIs.",
-      tech: ["Python", "OpenAI", "FastAPI", "React"],
-      gradient: "from-cyan-500 to-blue-600",
-      emoji: "🤖"
+      title: "Random Color Generator",
+      description: "A handy utility tool that generates random hex color codes, useful for designers and developers.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      gradient: "from-yellow-400 to-orange-500",
+      emoji: "🎨",
+      liveLink: "https://harshit-tiwarii.github.io/color-generator/",
+      githubLink: "https://github.com/harshit-tiwarii/color-generator"
     }
   ];
 
@@ -105,12 +122,12 @@ export const ProjectsSection = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-[calc(100%-8rem)]">
                   <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed flex-grow">
                     {project.description}
                   </p>
 
@@ -127,14 +144,18 @@ export const ProjectsSection = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <Button size="sm" className="flex-1 rounded-xl group">
-                      <ExternalLink className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                      Live Demo
-                    </Button>
-                    <Button variant="outline" size="sm" className="rounded-xl">
-                      <Github className="w-4 h-4" />
-                    </Button>
+                  <div className="flex gap-3 mt-auto">
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button size="sm" className="w-full rounded-xl group">
+                        <ExternalLink className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                        Live Demo
+                      </Button>
+                    </a>
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="rounded-xl px-3">
+                        <Github className="w-4 h-4" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </Card>
@@ -142,11 +163,13 @@ export const ProjectsSection = () => {
           </div>
 
           {/* View More Button */}
-          <div className={`text-center mt-12 transition-all duration-1000 delay-600 ${isVisible ? 'animate-fade-up' : ''}`}>
-            <Button variant="outline" className="px-8 py-4 rounded-2xl border-2 border-primary/20 hover:border-primary/50 hover:bg-primary/5">
-              View All Projects
-              <ExternalLink className="ml-2 h-5 w-5" />
-            </Button>
+          <div className={`text-center mt-16 transition-all duration-1000 delay-600 ${isVisible ? 'animate-fade-up' : ''}`}>
+             <a href="https://github.com/harshit-tiwarii?tab=repositories" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="px-8 py-6 text-base rounded-2xl border-2 border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
+                  View All Projects
+                  <ExternalLink className="ml-2 h-5 w-5" />
+                </Button>
+            </a>
           </div>
         </div>
       </div>

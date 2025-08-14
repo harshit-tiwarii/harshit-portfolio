@@ -23,7 +23,7 @@ export const Footer = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com/harshit-tiwarii", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/harshit-tiwariii", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Twitter, href: "https://x.com/HarshitTiw40119?t=9cjlj7KHLzMvJ0sQdKDbkw&s=09", label: "Twitter" },
   ];
 
   return (

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Download, Calendar, MapPin, Award, Briefcase, GraduationCap } from 'lucide-react';
+import resume from '../../public/Resume.pdf'
 
 export const ResumeSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,24 +27,17 @@ export const ResumeSection = () => {
 
   const experience = [
     {
-      title: "Senior Full-Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
-      description: "Lead development of enterprise web applications using React, Node.js, and cloud technologies. Mentored junior developers and implemented CI/CD pipelines."
-    },
-    {
       title: "Frontend Developer",
-      company: "StartupXYZ",
-      period: "2021 - 2022",
+      company: "Startup",
+      period: "march 2024 - may 2024",
       location: "Remote",
       description: "Developed responsive web applications and mobile interfaces. Collaborated with design teams to implement pixel-perfect UI components."
     },
     {
       title: "Junior Developer",
-      company: "WebDev Agency",
-      period: "2020 - 2021",
-      location: "New York, NY",
+      company: "codeSoft",
+      period: "2025 - 2025",
+      location: "Remote",
       description: "Built custom websites and web applications for various clients. Gained experience in multiple technologies and frameworks."
     }
   ];
@@ -59,7 +53,7 @@ export const ResumeSection = () => {
   ];
 
   const certifications = [
-    "AWS Certified Developer",
+    "Full stack Developer Certification",
     "React Developer Certification",
     "Google Cloud Professional",
   ];
@@ -76,7 +70,7 @@ export const ResumeSection = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Professional experience and educational background
             </p>
-            <Button className="btn-gradient">
+            <Button className="btn-gradient" onClick={()=> window.open(resume,"_blank")}>
               <Download className="mr-2 h-5 w-5" />
               Download PDF Resume
             </Button>
